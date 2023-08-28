@@ -1,9 +1,9 @@
 import React from 'react';
 
-const page = ({cookies}) => {
+const page = () => {
     return (
         <div>
-            
+            <h3>The redirect page</h3>
         </div>
     );
 };

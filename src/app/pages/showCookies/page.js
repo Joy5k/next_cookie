@@ -1,6 +1,8 @@
 'use client'
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { NextResponse } from "next/server";
+
 const page = () => {
     
     const [theme, setTheme] = useState("light");
@@ -20,6 +22,12 @@ const page = () => {
             </span>
             </h4>
             <a className='bg-green-500 p-3 text-xl font-bold rounded-lg mt-10' href="/">Go to Home</a>
+            <div className='m-10'>
+    
+      <a href='/pages/redirect' className='bg-green-500 p-3 text-xl font-bold rounded-lg mt-20'>
+        Redirect
+      </a>
+    </div>
         </div>
     );
 };
