@@ -6,20 +6,33 @@ import CookieSetter from './pages/createCookies/page';
 import { useState, useEffect } from 'react';
 
 const MyComponent = () => {
+
   const handleSetCookie = () => {
     Cookies.set('myCookie', 'cookieValue', { expires: 7 });
     
   };
   const [theme, setTheme] = useState("light");
 
+  // useEffect(() => {
+  //   // This code will only run after the component has been rendered.
+  //   const cookies = document.cookie.split(";");
+  //   console.log(cookies);
+  //   const themeCookie = cookies.find((cookie) => cookie.startsWith("theme="));
+  //   setTheme(themeCookie);
+  //   console.log(themeCookie);
+  // }, []);
   useEffect(() => {
-    // This code will only run after the component has been rendered.
-    const cookies = document.cookie.split(";");
-    console.log(cookies);
-    const themeCookie = cookies.find((cookie) => cookie.startsWith("theme="));
-    setTheme(themeCookie);
-    console.log(themeCookie);
-  }, []);
+    fetch('http://localhost:3000/api/setHeaders', {
+      method:'POST',
+      headers: {
+        Authorization: '123-XYZ-JOY'
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data,'get the data from main  page');
+      })
+  },[])
 
   return (
     <div className=' text-center'>

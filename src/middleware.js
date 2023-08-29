@@ -3,11 +3,11 @@ import { headers } from "../next.config";
 
 export function middleware(req, res,next) {
 
-    // if (req.nextUrl.pathname.startsWith('/pages/redirect')) {
-    //     return NextResponse.redirect(new URL('/pages/about', req.url));
-    // }
+    if (req.nextUrl.pathname.startsWith('/pages/redirect')) {
+        return NextResponse.redirect(new URL('/pages/about', req.url));
+    }
  
-    if (req.nextUrl.pathname.startsWith('/pages/showCookies')) {
+    if (req.nextUrl.pathname.startsWith('/pages')) {
         const reqHeader = new Headers(req.headers)
         const token = reqHeader.get('token')
         console.log('The token is: ' + token);

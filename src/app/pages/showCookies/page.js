@@ -26,7 +26,8 @@ const page = () => {
     
       <a href='/pages/redirect' className='bg-green-500 p-3 text-xl font-bold rounded-lg mt-20'>
         Redirect
-      </a>
+          </a>
+          <p className='mt-6'>The redirect button is optional.Also the redirect api has created</p>
     </div>
         </div>
     );
