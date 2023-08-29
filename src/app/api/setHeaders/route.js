@@ -4,9 +4,11 @@ import { NextResponse } from "next/server";
 
 
 
-export function POST(req, res) {
+export function GET(req, res) {
     const list = headers();
-    const Authorization = list.get('Authorization');
+    const Authorization = list.get('token');
+    const user = list.get('user');
+    const newToken = list.get('newToken');
   
-    return NextResponse.json({ token: Authorization });
+    return NextResponse.json({ token: Authorization,user:user,newToken:newToken });
   }

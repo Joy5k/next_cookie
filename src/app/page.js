@@ -23,7 +23,6 @@ const MyComponent = () => {
   // }, []);
   useEffect(() => {
     fetch('http://localhost:3000/api/setHeaders', {
-      method:'POST',
       headers: {
         Authorization: '123-XYZ-JOY'
       }

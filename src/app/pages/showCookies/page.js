@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 const page = () => {
     
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("...");
 
     useEffect(() => {
       // This code will only run after the component has been rendered.
