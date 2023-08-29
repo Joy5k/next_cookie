@@ -2,11 +2,9 @@ import { NextResponse } from "next/server";
 import { headers } from "../next.config";
 
 export function middleware(req, res) {
-
     if (req.nextUrl.pathname.startsWith('/pages/redirect')) {
         return NextResponse.redirect(new URL('/pages/about', req.url));
     }
- 
     if (req.nextUrl.pathname.startsWith('/')) {
         const reqHeader = new Headers(req.headers)
         const token = reqHeader.get('token')
@@ -19,6 +17,4 @@ export function middleware(req, res) {
             })
         }
     }
-    
-    console.log('the middleware');
 }

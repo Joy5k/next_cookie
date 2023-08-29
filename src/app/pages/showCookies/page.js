@@ -4,13 +4,10 @@ import { useState, useEffect } from 'react';
 import { NextResponse } from "next/server";
 
 const page = () => {
-    
-    const [theme, setTheme] = useState("...");
 
+    const [theme, setTheme] = useState("...");
     useEffect(() => {
-      // This code will only run after the component has been rendered.
       const cookies = document.cookie.split(";");
-      console.log(cookies);
         const themeCookie = cookies.find((cookie) => cookie.startsWith("theme="));
         const theme=themeCookie.split('theme=')
       setTheme(theme);
